@@ -1,0 +1,31 @@
+body {
+    background-image: url("../background.jpg");
+    background-size: cover;
+    font-family: 'Open Sans', sans-serif;
+}
+.form {
+    width: 50%;
+    text-align: center;
+}
+.form input{
+    border-radius: 8px;
+}
+
+.left {
+    float: left;
+}
+.right {
+    float: right;
+}
+.bottom {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    text-align: center;
+    background-color: #4CCC9B;
+
+}
+.bottom button {
+    border-radius: 8px;
+    font-family: 'Open Sans', sans-serif;
+}
