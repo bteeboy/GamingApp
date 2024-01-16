@@ -10,7 +10,7 @@ let mainWindow;
 function createMainWindow() {
     mainWindow = new BrowserWindow({
         title: 'ACCFuelCalculator',
-        width: 400, 
+        width: 600, 
         height: 400,
         icon: path.join(__dirname, 'carGas.jpg'),
         webPreferences: {

@@ -1,7 +1,19 @@
 body {
-    background-image: url("../background.jpg");
-    background-size: cover;
     font-family: 'Open Sans', sans-serif;
+    background-image: url("../wrcbackground.jpg");
+    background-size: cover;
+}
+.appSelector {
+    border-radius: 8px;
+    font-family: 'Open Sans', sans-serif;
+    /* opacity: 50%; */
+}
+
+.ACCFuelCalculator{
+    display: none;
+}
+#WRCAppSelector {
+    opacity: 50%;
 }
 .form {
     width: 50%;
@@ -22,8 +34,12 @@ body {
     bottom: 0;
     left: 0;
     text-align: center;
+}
+.ACCBottom{
     background-color: #4CCC9B;
-
+}
+.WRCBottom{
+    background-color: #F3F3F3;
 }
 .bottom button {
     border-radius: 8px;

@@ -11,23 +11,35 @@
     <title>Fuel Calculator</title>
 </head>
 <body>
-    <div class="form left">
-        <label for="raceDuration">Race duration (min):</label><br>
-        <input type="text" id="raceDuration" name="raceDuration"><br>
-        <label for="averageLapTimeMin">Average lap time (min):</label><br>
-        <input type="text" id="averageLapTimeMin" name="fuelForRace"><br>
+    <button id="ACCAppSelector" class="appSelector">ACCFuelCalculator</button>
+    <button id="WRCAppSelector" class="appSelector">WRCRandomStage</button>
+    <div class="ACCFuelCalculator">
+        <div class="form left">
+            <label for="raceDuration">Race duration (min):</label><br>
+            <input type="text" id="raceDuration" name="raceDuration"><br>
+            <label for="averageLapTimeMin">Average lap time (min):</label><br>
+            <input type="text" id="averageLapTimeMin" name="fuelForRace"><br>
+        </div>
+        <div class="form right">
+            <label for="fuelPerLap">Fuel per lap (L):</label><br>
+            <input type="text" id="fuelPerLap" name="fuelPerLap"><br>
+            <label for="averageLapTimeSec">Average lap time (sec):</label><br>
+            <input type="text" id="averageLapTimeSec" maxlength="2"><br>
+        </div>
+        <div class="bottom ACCBottom">
+            <button id="calculate">Calculate</button>
+        <br>
+        <label for="output">Minimum Fuel Required:</label>
+        <output id="output" name="output"></output>
+        </div>
     </div>
-    <div class="form right">
-        <label for="fuelPerLap">Fuel per lap (L):</label><br>
-        <input type="text" id="fuelPerLap" name="fuelPerLap"><br>
-        <label for="averageLapTimeSec">Average lap time (sec):</label><br>
-        <input type="text" id="averageLapTimeSec" maxlength="2"><br>
-    </div>
-    <div class="bottom">
-        <button id="calculate">Calculate</button>
-      <br>
-      <label for="output">Minimum Fuel Required:</label>
-      <output id="output" name="output"></output>
+
+    <div class="WRCRandomStage">
+        <div class="bottom WRCBottom">
+            <button id="randomStageButton">Random Stage</button>
+        <br>
+        <output id="WRCoutput" name="output"></output>
+        </div>
     </div>
       <script src="render.js"></script>
 </body>
