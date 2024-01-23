@@ -1,5 +1,6 @@
 const path = require('path');
 const { app, BrowserWindow, Menu } = require('electron');
+const { WRCStages } = require('./stages.js');
 
 // Create the main window
 const isDev = process.env.NOTE_ENV !== 'production';
@@ -20,8 +21,8 @@ function createMainWindow() {
     });
     windows.add(mainWindow)
     mainWindow.loadFile(path.join(__dirname, 'renderer','index.html'));
-    // mainWindow.setAlwaysOnTop(true, "normal")
-    // mainWindow.loadFile('index.html')
+    // Send the data to the renderer process
+    mainWindow.webContents.send('WRCStages', WRCStages);
 }
 
 app.whenReady().then(() => {

@@ -35,6 +35,7 @@ document.getElementById('calculate').addEventListener('click', () => {
 //     TL – Average Lap Time 
 
 //WRC RANDOM STAGE
+
 //When the buttons to select the different apps are clicked the css is changed to display the right div change the body background and dim the button
 document.getElementById('ACCAppSelector').addEventListener('click', () => {
     document.querySelector('.ACCFuelCalculator').style.display = 'block'
