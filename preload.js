@@ -1,4 +1,4 @@
-const { contextBridge, ipcRenderer } = require('electron');
+// const { contextBridge, ipcRenderer } = require('electron');
 
-// Expose IPC Renderer to the window
-contextBridge.exposeInMainWorld('ipcRenderer', ipcRenderer);
+// // Expose IPC Renderer to the window
+// contextBridge.exposeInMainWorld('ipcRenderer', ipcRenderer);

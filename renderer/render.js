@@ -34,8 +34,8 @@ document.getElementById('calculate').addEventListener('click', () => {
 //     FL – Fuel per lap
 //     TL – Average Lap Time 
 
-//WRC RANDOM STAGE
 
+//SELECTING WHICH APP
 //When the buttons to select the different apps are clicked the css is changed to display the right div change the body background and dim the button
 document.getElementById('ACCAppSelector').addEventListener('click', () => {
     document.querySelector('.ACCFuelCalculator').style.display = 'block'
@@ -52,6 +52,7 @@ document.getElementById('WRCAppSelector').addEventListener('click', () => {
     document.getElementById('ACCAppSelector').style.opacity = '100%'
 })
 
+//WRC RANDOM STAGE
 //Making an array containing objects with stage information 
 const WRCStages = [
     {
@@ -1355,11 +1356,58 @@ const WRCStages = [
     // Add more routes as needed
   ];
 
+
 //function to generate random stage
 function getRandomStage() {
-    const randomIndex = Math.floor(Math.random() * WRCStages.length);
-    return WRCStages[randomIndex];
-}
+  //Query Selectors
+let lengthDropdown = document.getElementById('lengthDropdown').value
+let surfaceDropdown = document.getElementById('surfaceDropdown').value
+    //add each search into  an array after checking against filter
+    //filtering out surfaces
+    let filteredArray = []
+    for (let index = 0; index < WRCStages.length; index++) {
+      const stage = WRCStages[index];
+      if (surfaceDropdown === 'Any'){
+        filteredArray.push(stage)
+      }else if (stage.surface.includes(surfaceDropdown) === true ){
+        filteredArray.push(stage)
+      }
+      
+    }
+    //filtering out distance
+    let doubleFilteredArray = []
+    for (let index = 0; index < filteredArray.length; index++) {
+      const stage = filteredArray[index];
+    //Converting distance string to integer to check
+    let randomStageDistance = stage.distance
+    let spaceCharacter = randomStageDistance.indexOf(' ')
+    let distanceNumber = Number(randomStageDistance.substring(0,spaceCharacter))
+    if (lengthDropdown === 'any') {
+      doubleFilteredArray.push(stage)
+    }else if(lengthDropdown === 'short'){
+      if (distanceNumber < 10){
+        doubleFilteredArray.push(stage)
+        }
+      }else if(lengthDropdown === 'medium'){
+        if (distanceNumber > 10 && distanceNumber < 20){
+          doubleFilteredArray.push(stage)
+        }
+      }else if(lengthDropdown === 'long'){
+        if (distanceNumber > 20){
+          doubleFilteredArray.push(stage)
+        }
+      }
+      
+    }
+    //Generating Stage and making sure there's some sort of result
+    let randomIndex = Math.floor(Math.random() * doubleFilteredArray.length);
+    let randomStage = doubleFilteredArray[randomIndex];
+    if (randomStage === undefined) {
+      randomStage = ('Something has gone wrong')
+    }    
+    return randomStage;
+  }
+// }
 
 //eventlistener to change WRC output to random stage details
 document.getElementById('randomStageButton').addEventListener('click', () => {

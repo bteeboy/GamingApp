@@ -33,9 +33,26 @@
         <output id="output" name="output"></output>
         </div>
     </div>
-
+<!-- HTML for the WRC random stage generator -->
     <div class="WRCRandomStage">
         <div class="bottom WRCBottom">
+            <!-- dropdown for choosing a distance range -->
+            <label for="length">Distance</label>
+            <select name="length" id="lengthDropdown">
+            <option value="any">Any</option>
+              <option value="short">Short: (under 10km)</option>
+              <option value="medium">Medium: (10-20km)</option>
+              <option value="long">Long: (Over 20km)</option>
+            </select> 
+            <!-- Dropdown to choose a surface -->
+            <label for="surface">Surface</label>
+            <select name="surface" id="surfaceDropdown">
+            <option value="Any">Any</option>
+              <option value="Asphalt">Asphalt</option>
+              <option value="Snow">Snow</option>
+              <option value="Gravel">Gravel</option>
+              <option value="Dirt">Dirt</option>
+            </select> 
             <button id="randomStageButton">Random Stage</button>
         <br>
         <output id="WRCoutput" name="output"></output>

@@ -1,6 +1,7 @@
 module.exports = {
   packagerConfig: {
     asar: true,
+    icon: 'icon'    // no file extension required
   },
   rebuildConfig: {},
   makers: [
@@ -10,7 +11,7 @@ module.exports = {
     },
     {
       name: '@electron-forge/maker-zip',
-      platforms: ['darwin'],
+      platforms: ['win32'],
     },
     {
       name: '@electron-forge/maker-deb',
